@@ -1,1 +1,14 @@
-
+Month 1: Learning/Front-end design
+  Week 1 (6/4):
+  Week 2 (6/11): 
+  Week 3 (6/18): Ethan done with Odin Project
+  Week 4 (6/25): Ethan done with Odin Project
+Month 2: 
+  Week 5 (7/2):
+  Week 6 (7/9):
+  Week 7 (7/16):
+  Week 8 (7/23):
+Month 3: 
+  Week 9 (7/30):
+  Week 10 (8/6):
+  Optional Week 11 (8/13):
