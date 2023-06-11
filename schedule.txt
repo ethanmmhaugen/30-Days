@@ -1,10 +1,10 @@
 Month 1: Learning/Front-end design
-  Week 1 (6/4): 
-  Week 2 (6/11): Rick/Reece mockup designs
-  Week 3 (6/18): Ethan/Rick done with Odin Project(?). 
-  Week 4 (6/25): Ethan/Rick done with Odin Project. Code frontend using mockups.
-Month 2: Design Backend, implement backend, build APIs
-  Week 5 (7/2): Design
+  Week 1 (6/4): Odin Project
+  Week 2 (6/11): Odin Project
+  Week 3 (6/18): Odin Project
+  Week 4 (6/25): Try to tackle bigger Odin projects together, with time complete mockups
+Month 2: Design Front-end (ethan) and backend(rick)
+  Week 5 (7/2): Design both
   Week 6 (7/9): Finish Design, Start Implement
   Week 7 (7/16): Finish Implement
   Week 8 (7/23): Start APIs, Deploying
