@@ -6,3 +6,7 @@ Rick - Odin Project back-end
 Updated schedule
 Ethan - continue front end
 Rick - continue back-end
+
+6/18 - Odin Project progress update
+Ethan - Intermediate and advanced HTML CSS, try to create templates for landing page
+Rick - continue Javascript
