@@ -10,3 +10,7 @@ Rick - continue back-end
 6/18 - Odin Project progress update
 Ethan - Intermediate and advanced HTML CSS, try to create templates for landing page
 Rick - continue Javascript
+
+6/22 - Odin Project progress update, goal shift
+Agreed to shift project direction to more open-ended, fitness(?) related platform with the goal to connect and inspire people to live healthier.
+More details to be worked out, will continue to work on related front-end and back-end skills separately and implement features as we go
