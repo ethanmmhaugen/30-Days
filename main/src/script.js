@@ -1,7 +1,7 @@
-const listsContainer = document.querySelector('[data-lists]')
-const newListForm = document.querySelector('[data-new-list-form]')
-const newListInput = document.querySelector('[data-new-list-input]')
-const deleteListButton = document.querySelector('[data-delete-list-button]')
+//const listsContainer = document.querySelector('[data-lists]')
+//const newListForm = document.querySelector('[data-new-list-form]')
+//const newListInput = document.querySelector('[data-new-list-input]')
+//const deleteListButton = document.querySelector('[data-delete-list-button]')
 const listDisplayContainer = document.querySelector('[data-list-display-container]')
 const listTitleElement = document.querySelector('[data-list-title]')
 const listCountElement = document.querySelector('[data-list-count]')
@@ -13,20 +13,20 @@ const clearCompleteTasksButton = document.querySelector('[data-clear-complete-ta
 
 const LOCAL_STORAGE_LIST_KEY = 'task.list'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
-let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
-let selectedListId = localStorage.getItem
-(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
-
+let list = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || createList('To-Do')
+//let selectedListId = localStorage.getItem
+//(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
+/*
 listsContainer.addEventListener('click', e=>{
     if(e.target.tagName.toLowerCase() === 'li'){
         selectedListId = e.target.dataset.listId
         saveAndRender()
     }
 })
-
+*/
 tasksContainer.addEventListener('click', e => {
     if(e.target.tagName.toLowerCase() === 'input'){
-        const selectedList = lists.find(list => list.id === selectedListId)
+        const selectedList = list  //.find(list => list.id === selectedListId)
         const selectedTask = selectedList.tasks.find(task => task.id === e.target.id)
         selectedTask.complete = e.target.checked
         save()
@@ -35,18 +35,22 @@ tasksContainer.addEventListener('click', e => {
     }
 })
 
+//make this clear automatically
 clearCompleteTasksButton.addEventListener('click', e=>{
-    const selectedList = lists.find(list=> list.id === selectedListId)
+    const selectedList = list //.find(list=> list.id === selectedListId)
     selectedList.tasks = selectedList.tasks.filter(task => !task.complete)
     saveAndRender()
 })
 
+/*no need for this
 deleteListButton.addEventListener('click', e=>{
     lists = lists.filter(list => list.id !== selectedListId)
     selectedListId = null
     saveAndRender()
 })
+*/
 
+/*no need for this
 newListForm.addEventListener('submit', e => {
     e.preventDefault()
     const listName = newListInput.value 
@@ -56,6 +60,7 @@ newListForm.addEventListener('submit', e => {
     lists.push(list)
     saveAndRender()
 })
+*/
 
 newTaskForm.addEventListener('submit', e => {
     e.preventDefault()
@@ -63,13 +68,13 @@ newTaskForm.addEventListener('submit', e => {
     if (taskName == null || taskName === '') return
     const task = createTask(taskName)
     newTaskInput.value = null
-    const selectedList = lists.find(list => list.id === selectedListId)
+    const selectedList = list //.find(list => list.id === selectedListId)
     selectedList.tasks.push(task)
     saveAndRender()
 })
 
 function createList(name){
-    return {id: Date.now().toString(), name: name, tasks: []}
+    return {id: 1, name: name, tasks: []}
         
 }
 
@@ -84,24 +89,26 @@ function saveAndRender(){
 }
 
 function save(){
-    localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists))
-    localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId)
+    localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(list))
+    //localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId)
 }
 
 function render() {
-    clearElement(listsContainer)
+    /*clearElement(listsContainer)
     renderLists()
-    const selectedList = lists.find(list => list.id === selectedListId)
-    if(selectedListId == null){
+    */
+    const selectedList = list
+    /*if(selectedListId == null){
         listDisplayContainer.style.display = 'none'
     }
     else{
-        listDisplayContainer.style.display = ''
-        listTitleElement.innerText = selectedList.name
-        renderTaskCount(selectedList)
-        clearElement(tasksContainer)
-        renderTasks(selectedList)
-    }
+        */
+    listDisplayContainer.style.display = ''
+    listTitleElement.innerText = list.name
+    renderTaskCount(selectedList)
+    clearElement(tasksContainer)
+    renderTasks(selectedList)
+
 }
 
 function renderTasks(selectedList){
@@ -124,6 +131,7 @@ function renderTaskCount(selectedList){
     listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
 }
 
+/*
 function renderLists() {
     lists.forEach(list => {
         const listElement = document.createElement('li')
@@ -133,9 +141,10 @@ function renderLists() {
         if(list.id === selectedListId){
             listElement.classList.add('active-list')
         } 
-        listsContainer.appendChild(listElement)
+        //listsContainer.appendChild(listElement)
     })
 }
+*/
 
 function clearElement(element){
     while(element.firstChild){

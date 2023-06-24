@@ -22,9 +22,9 @@ body {
 
     display: grid;
     grid:
-     "header header header header" auto
-     "...... lists  active ......" auto /
-     1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+     "header header header" auto
+     "...... active  ......" auto /
+     1fr minmax(300px, 500px) 1fr;
 }
 
 .title{
@@ -131,6 +131,7 @@ opacity: .4;
     font-weight: 700;
 }
 
+
 .todo-list{
     --spacer: 2rem;
 
@@ -138,6 +139,7 @@ opacity: .4;
     background: var(--clr-light);
     color: var(--clr-dark);
 }
+
 
 .todo-header{
     padding: var(--spacer);
