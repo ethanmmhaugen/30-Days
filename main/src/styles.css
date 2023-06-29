@@ -26,7 +26,6 @@ body {
     grid:
      "nav    nav        nav" auto
      "...... active  ......" auto 
-     "filler filler  filler" auto
      "footer footer  footer" auto/
      1fr minmax(300px, 500px) 1fr;
      
