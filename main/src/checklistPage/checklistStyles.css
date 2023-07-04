@@ -25,7 +25,7 @@ body {
 
     display: grid;
     grid:
-     "top    top       top" max(10vh,60px)
+     "top    top       top" max(15vh,60px)
      "...... active ......" auto 
      "bottom bottom bottom" max(10vh,60px)/
      1fr minmax(300px, 800px) 1fr;
