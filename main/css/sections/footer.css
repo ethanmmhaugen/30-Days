@@ -1,0 +1,8 @@
+.footer{
+    grid-area: footer;
+    background-color: var(--clr-light);
+    z-index: 2;
+    position: absolute;
+    min-height: 30px;
+    width:100%;
+}

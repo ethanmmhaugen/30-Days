@@ -1,0 +1,181 @@
+:root {
+    --clr-primary: rgb(163, 189, 145);
+    --clr-light: #f4f4f4;
+    --clr-dark: #333;
+    --clr-warning: rgb(99, 36, 36);
+    --blue-rgb: 33 150 243;
+}
+
+*,
+*::before,
+*::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    font-family: 'Caveat', cursive, "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.7rem;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+
+    display: grid;
+    grid:
+     "top    top       top" max(15vh,60px)
+     "...... active ......" auto 
+     "bottom bottom bottom" max(10vh,60px)/
+     1fr minmax(300px, 800px) 1fr;
+
+     background-color: rgb(var(--blue-rgb) / 15%);
+     z-index: 10; 
+}
+
+
+.screen-overlay{
+    background: linear-gradient(
+    rgb(var(--primary-rgb) / 0.15),
+    rgb(var(--primary-rgb) / 0.15) 9px,
+    red 9px,
+    red 20px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+}
+
+@keyframes pan-overlay{
+    from{
+        background-position: 0% 0%;
+    }
+
+    to{
+        background-position: 0% -100%;
+    }
+}
+
+.screen-image{
+    height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  left: 0px;
+  top: 0px;
+  background-size: 300%;
+  background-position: 0% 0%;
+  filter: sepia(100%) hue-rotate(160deg);
+  opacity: 0.6;
+  animation: pan-image 15s linear infinite;
+}
+
+@keyframes pan-image {  
+    0% {
+      background-position: 36% 42%;
+      background-size: 200%;
+    }
+    
+    20% {
+      background-position: 30% 35%;
+      background-size: 200%;
+    }
+    
+    20.0001% { /* -- View 2 -- */
+      background-position: 60% 85%;
+      background-size: 500%;
+    }
+    
+    40% {
+      background-position: 49% 81%;
+      background-size: 500%;
+    }
+    
+    40.0001% { /* -- View 3 -- */
+      background-position: 80% 42%;
+      background-size: 300%;
+    }
+    
+    60% {
+      background-position: 84% 33%;
+      background-size: 300%;
+    }
+    
+    60.0001% { /* -- View 4 -- */
+      background-position: 0% 0%;
+      background-size: 300%;
+    }
+    
+    80% {
+      background-position: 15% 4%;
+      background-size: 300%;
+    }
+    
+    80.0001% { /* -- View 5 -- */
+      background-position: 80% 10%;
+      background-size: 300%;
+    }
+    
+    100% {
+      background-position: 72% 14%;
+      background-size: 300%;
+    }
+  }
+
+.survey-container{
+    z-index: 2;
+    grid-area: active;
+    background-color: var(--clr-light);
+    color: #333;
+    display: grid;
+    grid:
+    "survey-header survey-header survey-header" 15%
+    "...... survey-list ......" 70%
+    "...... button ......" 15%/
+    1fr auto 1fr;
+}
+
+.survey-container > h1{
+    grid-area: survey-header;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 20px;
+    
+}
+
+ul{
+    grid-area: survey-list;
+    list-style:outside none none;
+    margin-left: 0px;
+    padding: 0px;
+}
+
+li{
+    margin-bottom: 30px;
+    border: 2px;
+    border-color: #333;
+}
+
+button{
+    grid-area: button;
+    margin: 20px;
+}
+
+.filler{
+    min-height: 60px;
+}
+
+#top-filler{
+    grid-area: top;
+}
+
+#bottom-filler{
+    grid-area: bottom;
+}
