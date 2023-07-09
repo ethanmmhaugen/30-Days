@@ -3,7 +3,7 @@
     --clr-light: #f4f4f4;
     --clr-dark: #333;
     --clr-warning: rgb(99, 36, 36);
-    --blue-rgb: 33 150 243;
+    --blue-rgb: rgb(14, 62, 103);
 }
 
 *,
@@ -22,6 +22,9 @@ body {
     min-height: 100vh;
     text-align: center;
     overflow: hidden;
+    color: rgb(76, 146, 66);
+    background-color: rgb(208, 230, 189);
+    z-index: 10;
 
     display: grid;
     grid:
@@ -30,50 +33,21 @@ body {
      "bottom bottom bottom" max(10vh,60px)/
      1fr minmax(300px, 800px) 1fr;
 
-     background-color: rgb(var(--blue-rgb) / 15%);
-     z-index: 10; 
-}
-
-
-.screen-overlay{
-    background: linear-gradient(
-    rgb(var(--primary-rgb) / 0.15),
-    rgb(var(--primary-rgb) / 0.15) 9px,
-    red 9px,
-    red 20px
-  );
-  background-size: 100% 9px;
-  height: 100%;
-  width: 100%;
-  animation: pan-overlay 22s infinite linear;
-  position: absolute;
-  z-index: 1;
-  left: 0px;
-  top: 0px;
-}
-
-@keyframes pan-overlay{
-    from{
-        background-position: 0% 0%;
-    }
-
-    to{
-        background-position: 0% -100%;
-    }
+ 
 }
 
 .screen-image{
+    background-image: url("../../assets/light-green-falls.jpg");
     height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 0;
-  left: 0px;
-  top: 0px;
-  background-size: 300%;
-  background-position: 0% 0%;
-  filter: sepia(100%) hue-rotate(160deg);
-  opacity: 0.6;
-  animation: pan-image 15s linear infinite;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    left: 0px;
+    top: 0px;
+    background-size: 300%;
+    background-position: 0% 0%;
+    opacity: 0.6;
+    animation: pan-image 22s linear infinite;
 }
 
 @keyframes pan-image {  
@@ -81,64 +55,57 @@ body {
       background-position: 36% 42%;
       background-size: 200%;
     }
-    
     20% {
       background-position: 30% 35%;
       background-size: 200%;
     }
-    
     20.0001% { /* -- View 2 -- */
-      background-position: 60% 85%;
-      background-size: 500%;
+      background-position: 50% 55%;
+      background-size: 200%;
     }
-    
     40% {
-      background-position: 49% 81%;
-      background-size: 500%;
+      background-position: 39% 51%;
+      background-size: 225%;
     }
-    
     40.0001% { /* -- View 3 -- */
       background-position: 80% 42%;
-      background-size: 300%;
+      background-size: 150%;
     }
-    
     60% {
       background-position: 84% 33%;
-      background-size: 300%;
+      background-size: 150%;
     }
-    
     60.0001% { /* -- View 4 -- */
-      background-position: 0% 0%;
-      background-size: 300%;
+      background-position: 50% 20%;
+      background-size: 250%;
     }
-    
     80% {
-      background-position: 15% 4%;
-      background-size: 300%;
+      background-position: 65% 24%;
+      background-size: 250%;
     }
-    
     80.0001% { /* -- View 5 -- */
       background-position: 80% 10%;
-      background-size: 300%;
+      background-size: 150%;
     }
-    
     100% {
       background-position: 72% 14%;
-      background-size: 300%;
+      background-size: 150%;
     }
-  }
+}
 
 .survey-container{
-    z-index: 2;
+    z-index: 3;
     grid-area: active;
-    background-color: var(--clr-light);
-    color: #333;
+    background-color: rgb(244, 242, 235);
+    color: inherit;
     display: grid;
+    opacity: 1;
     grid:
     "survey-header survey-header survey-header" 15%
     "...... survey-list ......" 70%
     "...... button ......" 15%/
     1fr auto 1fr;
+    border-radius: 2rem;
 }
 
 .survey-container > h1{
@@ -165,7 +132,10 @@ li{
 
 button{
     grid-area: button;
-    margin: 20px;
+    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: inherit;
 }
 
 .filler{
