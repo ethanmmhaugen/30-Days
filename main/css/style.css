@@ -56,7 +56,7 @@ body {
     display: grid;
     align-content: space-between;
     grid:
-     "nav    nav        nav" auto
+     "header header  header" auto
      "...... about   ......" auto 
      "footer footer  footer" auto/
      1fr minmax(500px, 65vw) 1fr;

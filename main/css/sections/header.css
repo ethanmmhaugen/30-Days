@@ -1,5 +1,8 @@
+header{
+    grid-area: header;
+}
+
 .nav-bar{
-    grid-area: nav;
     z-index: 2;
     position: fixed;
     height: 80px;
@@ -14,7 +17,31 @@
 
 .nav-bar-logo{
     margin: 0px 0px 0px 0px;
-    padding: .5vh 0 1vh 3vw;
+    padding: 5px 0 10px 30px;
+    font-size: 3rem;
+    font: bold;
     color: #333;
     vertical-align: top;
+}
+
+.nav-bar-right{
+    flex-basis: 60%;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.login-button{
+    margin-right: 28px;
+    margin-left: auto;
+    border: none;
+    background-color: var(--clr-light);
+    text-align: center;
+    transition: scale 100ms ease-in-out;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login-button:hover{
+    cursor: pointer;
+    scale: 1.1;
 }
