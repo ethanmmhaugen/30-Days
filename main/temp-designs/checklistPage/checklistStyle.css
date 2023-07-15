@@ -93,6 +93,11 @@ body {
     }
 }
 
+li:hover{
+  scale: 1.2;
+  cursor: pointer;
+}
+
 .survey-container{
     z-index: 3;
     grid-area: active;

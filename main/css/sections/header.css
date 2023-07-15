@@ -31,9 +31,13 @@ header{
     padding-bottom: 10px;
 }
 
-.login-button{
-    margin-right: 28px;
+.login-form{
+    margin-right: 36px;
+    margin-top: 4px;
     margin-left: auto;
+}
+
+.login-button{
     border: none;
     background-color: var(--clr-light);
     text-align: center;
