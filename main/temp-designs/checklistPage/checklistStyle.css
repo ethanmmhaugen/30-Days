@@ -98,28 +98,45 @@ li:hover{
   cursor: pointer;
 }
 
-.survey-container{
+.content-background{
     z-index: 3;
     grid-area: active;
     background-color: rgb(244, 242, 235);
     color: inherit;
-    display: grid;
     opacity: 1;
-    grid:
+    border-radius: 2rem;
+    position: relative;
+}
+
+.content-container{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  grid:
     "survey-header survey-header survey-header" 15%
     "...... survey-list ......" 70%
     "...... button ......" 15%/
     1fr auto 1fr;
-    border-radius: 2rem;
 }
 
-.survey-container > h1{
+.content-container > h1{
     grid-area: survey-header;
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 15px;
     margin-right: 20px;
     
+}
+
+#section-2{
+  display: none;
+}
+
+#section-3{
+  display: none;
 }
 
 ul{

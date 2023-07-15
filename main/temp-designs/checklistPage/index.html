@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href = "checklistStyle.css" rel = "stylesheet">
@@ -15,27 +15,45 @@
     <div class="screen-image"></div>
     
     <div class="filler" id="top-filler"></div>
-    <!-- 1st section, ask about goals and such -->
-    <div class="survey-container">
-        <h1 class="survey-header">What habits do you want to develop?</h1>
-        <ul list-suggestions>
-            <li>Exercise More</li>
-            <li>Eat Healthier</li>
-            <li>Meditate</li>
-            <li>More Time Outdoors</li>
-            <li>Read More</li>
-            <li>Develop a Skill</li>
-        </ul>
-        <button>Next</button>
+    
+    <div class="content-background">
+        
+        <!-- 1st section, ask about goals and such -->
+        <div class="content-container" id="section-1">
+            <h1 class="survey-header">What habits do you want to develop?</h1>
+            <ul list-suggestions>
+                <li>Exercise More</li>
+                <li>Eat Healthier</li>
+                <li>Meditate</li>
+                <li>More Time Outdoors</li>
+                <li>Read More</li>
+                <li>Develop a Skill</li>
+            </ul>
+            <button type="button" id="section-1-button">Next</button>
+        </div>
+
+        <!-- 2nd section, populated list -->
+        <div class="content-container" id="section-2">
+            <h1 class="survey-header">2nd page</h1>
+            <ul list-suggestions>
+                <li>Blah</li>
+                <li>Blah</li>
+                <li>Blah</li>
+                <li>Blah</li>
+            </ul>
+            <button>Next2</button>
+        </div>
+
+        <!-- 3rd section, create profile -->
+        <div class="content-container" id="section-3">
+
+        </div>
+
     </div>
 
-    <div class="create-list-container">
+    
 
-    </div>
-
-    <div class="create-profile-container">
-
-    </div>
+    
 
     <div class="filler" id="bottom-filler"></div>
 
