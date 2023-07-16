@@ -152,6 +152,8 @@ li{
 
 button{
     color: inherit;
+    font-size: 2rem;
+    font: bold;
     margin-top: auto;
     margin-bottom: 15px;
     width: 20%;
