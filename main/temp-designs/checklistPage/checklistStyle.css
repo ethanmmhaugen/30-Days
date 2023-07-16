@@ -152,7 +152,7 @@ li{
 
 button{
     color: inherit;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font: bold;
     border-radius: 5px;
     border-color: #979393;
@@ -161,7 +161,12 @@ button{
     width: 20%;
     height: 40px;
     padding: 0;
-    background: whitesmoke
+    background: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#section-1-next-button{
+  width: 25%;
 }
 
 button:hover{
