@@ -16,7 +16,7 @@ function toggle_visibility(id, oldPage) {
         old_e.style.display = 'none';
     }
     console.log('new', new_e, 'block');
-    new_e.style.display = 'grid';   
+    new_e.style.display = 'flex';   
     visiblePage = id; 
     save()     
 }
