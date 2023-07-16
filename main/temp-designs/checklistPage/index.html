@@ -19,7 +19,9 @@
 
         <!-- 1st section, ask about goals and such -->
         <div class="content-container" id="section-1">
-            <h1 class="survey-header">What habits are you working on?</h1>
+            <div class="content-header">
+                <h2 class="list-title">What habits are you working on?</h2>
+            </div>
             <ul list-suggestions>
                 <li>Exercise More</li>
                 <li>Eat Healthier</li>
@@ -34,14 +36,28 @@
         </div>
 
         <!-- 2nd section, populated list -->
-        <div class="content-container" id="section-2">
-            <h1 class="survey-header">Create YOUR Checklist!</h1>
-            <ul list-suggestions>
-                <li>Blah</li>
-                <li>Blah</li>
-                <li>Blah</li>
-                <li>Blah</li>
-            </ul>
+        <div class="content-container" id="section-2" list-display-container>
+            <div class="content-header">
+                <h2 class="list-title">Create your list of daily goals!</h2>
+            </div>
+    
+            <div class="todo-body">
+                <div class="tasks" data-tasks>
+                    
+                </div>
+                <div class="new-task-creator">
+                    <form action="" data-new-task-form>
+                        <input 
+                            type="text"
+                            data-new-task-input
+                            class="new task"
+                            placeholder="new task name"
+                            aria-label="new task name"
+                        />    
+                        <button class="btn create" aria-label="create new task">+</button>
+                    </form>
+                </div>              
+            </div>
             <div class="button-container">
                 <button type="button" id="section-2-prev-button">Previous</button>
                 <button type="button" id="section-2-next-button">Next</button>
@@ -70,5 +86,13 @@
 
     <div class="filler" id="bottom-filler"></div>
 
-
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox"/>
+            <label>
+                <p>x</p>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
 </body>
