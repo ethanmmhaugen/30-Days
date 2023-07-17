@@ -303,7 +303,7 @@ form > input {
 }
 
 label > p {
-  color: red;
+  color: gray;
   font-size: 1.75rem;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
