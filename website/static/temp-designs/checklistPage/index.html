@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href = "checklistStyle.css" rel = "stylesheet">
+    <script defer src="checklistScript.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="screen-image"></div>
+    
+    <div class="filler" id="top-filler"></div>
+    
+
+        <!-- 1st section, ask about goals and such -->
+        <div class="content-container" id="section-1">
+            <div class="content-header">
+                <h2 class="list-title">What habits are you working on?</h2>
+            </div>
+            <ul list-suggestions>
+                <li>Exercise More</li>
+                <li>Eat Healthier</li>
+                <li>Meditate</li>
+                <li>More Time Outdoors</li>
+                <li>Read More</li>
+                <li id="last-li">Develop a Skill</li>
+            </ul>
+            <div class="button-container">
+                <button type="button" id="section-1-next-button">Generate List</button>
+            </div>
+        </div>
+
+        <!-- 2nd section, populated list -->
+        <div class="content-container" id="section-2" list-display-container>
+            <div class="content-header">
+                <h2 class="list-title">Create your list of daily goals!</h2>
+            </div>
+    
+            <div class="todo-body">
+                <div class="tasks" data-tasks>
+                    
+                </div>
+                <div class="new-task-creator">
+                    <form action="" data-new-task-form>
+                        <input 
+                            type="text"
+                            data-new-task-input
+                            class="new task"
+                            placeholder="new task name"
+                            aria-label="new task name"
+                        />    
+                        <button class="btn create" aria-label="create new task">+</button>
+                    </form>
+                </div>              
+            </div>
+            <div class="button-container">
+                <button type="button" id="section-2-prev-button">Previous</button>
+                <button type="button" id="section-2-next-button">Next</button>
+            </div>
+        </div>
+
+        <!-- 3rd section, create profile -->
+        <div class="content-container" id="section-3">
+            <h1 class="survey-header">3rd page</h1>
+            <ul list-suggestions>
+                <li>Blah</li>
+                <li>Blah</li>
+                <li>Blah</li>
+                <li>Blah</li>
+            </ul>
+            <div class="button-container">
+                <button type="button" id="section-3-prev-button">Previous</button>
+                <button type="button" id="section-3-finish-button">Finish</button>
+            </div>
+        </div>
+
+
+    
+
+    
+
+    <div class="filler" id="bottom-filler"></div>
+
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox"/>
+            <label>
+                <p>x</p>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
+</body>

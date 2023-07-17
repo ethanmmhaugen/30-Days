@@ -16,9 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, re_path
+from django.contrib.auth.views import LoginView, LogoutView
 
 from .views import homepage
 
 urlpatterns = [
     re_path(r"home$", homepage),
+      re_path(r'^login$', 
+            LoginView.as_view(template_name='put something here'), 
+            name='users_login'),
+    re_path(r'^logout$', 
+            LogoutView.as_view(), 
+            name='users_logout'),
 ]
