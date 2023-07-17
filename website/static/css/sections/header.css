@@ -1,0 +1,51 @@
+header{
+    grid-area: header;
+}
+
+.nav-bar{
+    z-index: 2;
+    position: fixed;
+    height: 80px;
+    width: 100vw;
+    background-color: var(--clr-light);
+    display: flex;
+}
+
+.nav-bar-left{
+    flex-basis: 40%;
+}
+
+.nav-bar-logo{
+    margin: 0px 0px 0px 0px;
+    padding: 5px 0 10px 30px;
+    font-size: 3rem;
+    font: bold;
+    color: #333;
+    vertical-align: top;
+}
+
+.nav-bar-right{
+    flex-basis: 60%;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.login-form{
+    margin-right: 36px;
+    margin-top: 4px;
+    margin-left: auto;
+}
+
+.login-button{
+    border: none;
+    background-color: var(--clr-light);
+    text-align: center;
+    transition: scale 100ms ease-in-out;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login-button:hover{
+    cursor: pointer;
+    scale: 1.1;
+}

@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="{% static 'assets\icons8-calendar-30-30.png' %}"/>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>30Days</title>
+</head>
+<body>
+  <!-- All Headers-->
+  <!-- Landing Page Header-->
+  <header>
+    <nav class="nav-bar" id="landing-nav-bar">
+        <div class="nav-bar-left">
+          <h1 class="nav-bar-logo">30Days</h1>
+        </div>
+        <div class="nav-bar-right" nav-bar-right>
+          <form class="login-form" action="{% static 'temp-designs/homePage/index.html' %}">
+            <button class="login-button">
+              <img src="{% static 'assets/small-key.png' %}">
+              <p>LOGIN</p>
+            </button>
+          </form>
+        </div>
+    </nav>
+  </header>
+  
+  <!-- All Body Content-->
+  <div class="main-section">
+    <!-- Landing Page Body-->
+    <div class="about-container">
+        <h1 class="about-title">Welcome to 30Days</h1>
+        <div class="about-text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni maxime quasi ipsa laboriosam perferendis exercitationem aspernatur nihil sed soluta voluptates, iure quisquam, iusto non eum vluptatem porro optio reiciendis modi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni maxime quasi ipsaLorem ipsum dolor sit amet, consectetur adipisicing elit. Magni maxime quasi ipsaLorem ipsum dolor sit amet, consectetur adipisicing elit. Magni maxime quasi ipsaLorem ipsum dolor sit amet, consectetur adipisicing elit. Magni maxime quasi ipsaLorem ipsum dolor sit amet, consectetur adipisicing elit. Magni maxime quasi ipsa</p>
+            <div class="buttons-container">
+                <form action="{% static 'temp-designs/checklistPage/index.html' %}">
+                  <button class="call-to-action-btn" id="create-profile-btn">Create Profile</button>
+                </form>
+                
+                <form>
+                  <button type="submit" class="call-to-action-btn" id="learn-more-btn">Learn More</button>
+                </form>
+                
+            </div>  
+        </div>
+    </div>
+    <!-------------------->
+
+
+    
+  </div>
+
+  <!-- All Footers-->
+  <div class="footer"></div>
+
+</body>
+</html>
