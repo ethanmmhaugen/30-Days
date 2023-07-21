@@ -18,12 +18,12 @@ from django.contrib import admin
 from django.urls import include, re_path
 from django.contrib.auth.views import LoginView, LogoutView
 
-from .views import homepage
+from .views import landing
 
 urlpatterns = [
-    re_path(r"home$", homepage),
-      re_path(r'^login$', 
-            LoginView.as_view(template_name='put something here'), 
+    re_path(r'^landing$', landing, name="users_landing"), 
+    re_path(r'^login$', 
+            LoginView.as_view(template_name='users/login_form.html'), 
             name='users_login'),
     re_path(r'^logout$', 
             LogoutView.as_view(), 
