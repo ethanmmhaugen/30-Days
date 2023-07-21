@@ -155,6 +155,13 @@ li{
    flex-basis: 20%;
    display: flex;
    justify-content: space-evenly;
+   padding-top: 26px;
+   margin-top: auto;
+   margin-bottom: 20px;
+}
+
+.new-task-creator{
+  margin-top: 100px;
 }
 
 button{
@@ -176,8 +183,25 @@ button{
   width: 25%;
 }
 
-form{
+.submit-form{
+  margin-top: auto;
+  margin-bottom: 15px;
+  width: 20%;
+  height: 40px;
   display: flex;
+}
+
+.form-button {
+  color: inherit;
+  font-size: 1.5rem;
+  font: bold;
+  border-radius: 5px;
+  border-color: #979393;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: var(--clr-less-light);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .task {
