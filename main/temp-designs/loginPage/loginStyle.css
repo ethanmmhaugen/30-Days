@@ -1,0 +1,178 @@
+:root {
+    --clr-primary: rgb(163, 189, 145);
+    --clr-light: whitesmoke;
+    --clr-less-light: rgb(244, 242, 235);
+    --clr-dark: #333;
+    --clr-warning: rgb(99, 36, 36);
+    --blue-rgb: rgb(43, 121, 190);
+    --clr-grey: rgb(103, 103, 103);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--clr-grey);
+}
+
+.background{
+    height: 100%;
+    width: 100%;
+    background-color: var(--clr-primary);
+    position: absolute;
+    z-index: 1;
+}
+  
+  .login-container {
+    width: 300px;
+    padding: 20px;
+    background-color: var(--clr-light);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  .signup-container {
+    width: 300px;
+    padding: 20px;
+    background-color: var(--clr-light);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 0px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form button {
+    margin-top: 20px;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: var(--blue-rgb);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  [placeholder]:focus::-webkit-input-placeholder {
+    transition: opacity 0.5s 0.5s ease; 
+    opacity: 0;
+  }
+  
+  .third-party-auth {
+    margin-top: 20px;
+    word-wrap: break-word;
+    display: flex;
+    gap: 20px;
+  }
+
+  .third-party-auth button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style the icon inside the buttons */
+  .third-party-auth button i {
+    margin-right: 5px; /* Add some spacing between the icon and text */
+    font-size: 2rem; /* Adjust the icon size as needed */
+    vertical-align: middle; /* Vertically align the icon within the button */
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  /* ... Sign Up CSS rules ... */
+
+.img-1{
+    position: absolute;
+    z-index: 1;
+    scale: .25;
+    top: -70px;
+    left: -20px;
+    animation: pulse 4s linear infinite;
+    rotate: -5deg;
+}
+
+
+.img-1:hover{
+    animation: flip .5s linear;
+}
+
+@keyframes flip{
+    25%{
+        rotate: 90deg;
+    }
+    50%{
+        rotate: 180deg;
+    }
+    75%{
+        rotate: 270deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+}
+
+@keyframes pulse{
+    20% {
+        scale: .26;
+        rotate: -2deg;
+    }
+
+    40% {
+        scale: .27;
+        rotate: 2deg;
+    }
+
+    50% {
+        scale: .275;
+        rotate: 5deg;
+    }
+
+    60% {
+        scale: .27;
+        rotate: 2deg;
+    }
+
+    80% {
+        scale: .26;
+        rotate: -2deg;
+    }
+
+    100% {
+        scale: .25;
+        rotate: -5deg;
+    }
+}
+  
+  /* ... other CSS rules ... */
