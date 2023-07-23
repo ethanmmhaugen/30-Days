@@ -22,14 +22,11 @@
             <div class="content-header">
                 <h2 class="list-title">What habits are you working on?</h2>
             </div>
-            <ul list-suggestions>
-                <li>Exercise More</li>
-                <li>Eat Healthier</li>
-                <li>Meditate</li>
-                <li>More Time Outdoors</li>
-                <li>Read More</li>
-                <li id="last-li">Develop a Skill</li>
-            </ul>
+            <div class="suggestion-body">
+                <div class="tasks" suggestions>
+
+                </div>
+            </div>
             <div class="button-container">
                 <button type="button" id="section-1-next-button">Generate List</button>
             </div>
@@ -75,7 +72,9 @@
             </ul>
             <div class="button-container">
                 <button type="button" id="section-3-prev-button">Previous</button>
-                <button type="button" id="section-3-finish-button">Finish</button>
+                <form class="submit-form" action="../signupPage/index.html">
+                    <button class="form-button" type="button" id="section-3-finish-button">Finish</button>
+                </form>
             </div>
         </div>
 
@@ -92,6 +91,15 @@
             <label>
                 <p>x</p>
                 <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
+
+    <template id="suggestion-template">
+        <div class="task">
+            <input type="checkbox"/>
+            <label>
+                <span class="suggestions-checkbox"></span>
             </label>
         </div>
     </template>

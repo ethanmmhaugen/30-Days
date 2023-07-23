@@ -18,14 +18,17 @@ from django.contrib import admin
 from django.urls import include, re_path
 from django.contrib.auth.views import LoginView, LogoutView
 
-from .views import landing
+from .views import landing, login, signup
 
 urlpatterns = [
     re_path(r'^landing$', landing, name="users_landing"), 
-    re_path(r'^login$', 
-            LoginView.as_view(template_name='users/login_form.html'), 
-            name='users_login'),
-    re_path(r'^logout$', 
-            LogoutView.as_view(), 
-            name='users_logout'),
+    re_path(r'^login/', login, name="users_login"),
+    re_path(r'^signup/', signup, name="users_signup"),
+
+    # re_path(r'^login$', 
+    #         LoginView.as_view(template_name='login/index.html'), 
+    #         name='users_login'),
+    # re_path(r'^logout$', 
+    #         LogoutView.as_view(), 
+    #         name='users_logout'),
 ]
