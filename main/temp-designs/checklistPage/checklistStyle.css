@@ -134,21 +134,11 @@ li:hover{
   display: none;
 }
 
-ul{
+.suggestion-body{
     flex-basis: 60%;
     list-style:outside none none;
     margin-left: 0px;
     padding: 0px;
-}
-
-li{
-    margin-bottom: 30px;
-    border: 2px;
-    border-color: #333;
-}
-
-#last-li{
-   margin-bottom: 5px
 }
 
 .button-container{
