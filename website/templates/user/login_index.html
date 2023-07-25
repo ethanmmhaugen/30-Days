@@ -19,14 +19,18 @@
   </div>
   <div class="login-container">
     <h2>Login</h2>
-    <form id="login-form">
+    <form id="login-form" 
+    action="{% url 'user_login' %}"
+    method="post">
+    {% csrf_token %}
+      
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" placeholder="legendary user #532" required>
 
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" placeholder="Shhhh I'm a secret" required>
 
-      <button type="submit">Login</button>
+      <button type="submit" class="btn btn-success">Login</button>
     </form>
 
     <div class="third-party-auth">
