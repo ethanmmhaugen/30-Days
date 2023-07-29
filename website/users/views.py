@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 # Create your views here.
@@ -11,3 +11,9 @@ def login(request):
 
 def signup(request):
     return render(request, 'user/signup_index.html')
+
+def welcome(request):
+    if request.user.is_authenticated:
+        return redirect('user_landing')
+    else:
+        return render(request, 'user/login_index.html')
