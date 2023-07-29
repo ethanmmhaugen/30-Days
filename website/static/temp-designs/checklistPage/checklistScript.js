@@ -19,9 +19,7 @@ let task_names = ['Exercise', 'Meditate', 'Eat Healthier', 'Leetcode']
 /* ========== For Page Switching ============ */
 document.getElementById('section-1-next-button').addEventListener("click", function(){(toggle_visibility('section-2', visiblePage))})
 document.getElementById('section-2-prev-button').addEventListener("click", function(){(toggle_visibility('section-1', visiblePage))})
-document.getElementById('section-2-next-button').addEventListener("click", function(){(toggle_visibility('section-3', visiblePage))})
-document.getElementById('section-3-prev-button').addEventListener("click", function(){(toggle_visibility('section-2', visiblePage))})
-document.getElementById('section-3-finish-button').addEventListener("click", function(){})
+document.getElementById('section-2-finish-button').addEventListener("click", function(){})
 
 function toggle_visibility(id, oldPage) {
     var old_e = document.getElementById(oldPage);
