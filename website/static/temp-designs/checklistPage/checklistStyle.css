@@ -313,6 +313,10 @@ form > input {
   opacity: 0;
   display: inline-block;
   margin-right: var(--size);
+  
+}
+
+label{
   cursor: pointer;
 }
 
@@ -333,37 +337,24 @@ label > p:hover{
   color: var(--clr-primary);
 }
 
-[type="checkbox"]:checked + label .custom-checkbox{
-  background: var(--clr-primary);
-  border-color: var(--clr-primary);
-  box-shadow: inset 0 0 0px 2px white;
+[type="checkbox"]:not(:checked) + label{
+  opacity: 60%;
+  transform: scale(.9);
+
 }
 
 [type="checkbox"]:checked + label{
-  opacity: .5;
+  opacity: 100%;
+  font-weight: 500;
+  transform: scale(1.1);
 }
 
 .task label::before{
   content: X;
 }
 
-.task label::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  left: 1.5em;
-  top: 50%;
-  height: 3px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transform: transform 150ms ease-in-out;
-}
-
-[type="checkbox"]:checked + label::after{
-  transform: scaleX(1);
-  transform-origin: left;
+[type="checkbox"]:checked + label .custom-checkbox{
+  font-weight: 800;
 }
 
 .filler{
