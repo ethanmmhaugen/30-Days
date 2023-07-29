@@ -17,24 +17,24 @@ let suggestions_list = createList('To-Do')
 let task_names = ['Exercise', 'Meditate', 'Eat Healthier', 'Leetcode']
 
 /* ========== For Page Switching ============ */
-document.getElementById('section-1-next-button').addEventListener("click", function(){(toggle_visibility('section-2', visiblePage))})
-document.getElementById('section-2-prev-button').addEventListener("click", function(){(toggle_visibility('section-1', visiblePage))})
-document.getElementById('section-2-finish-button').addEventListener("click", function(){})
+document.getElementById('section-1-next-button').addEventListener("click", function(){toggleAndGenerate('section-2', visiblePage)})
+document.getElementById('section-2-prev-button').addEventListener("click", function(){toggle_visibility('section-1', visiblePage)})
+document.getElementById('section-2-finish-button').addEventListener("click", function(){toggle_visibility('section-2', visiblePage)})
 
 function toggle_visibility(id, oldPage) {
     var old_e = document.getElementById(oldPage);
     var new_e = document.getElementById(id);
     if(old_e) {
-        console.log('old', old_e, 'none');
         old_e.style.display = 'none';
     }
-    console.log('new', new_e, 'block');
     new_e.style.display = 'flex';   
     visiblePage = id; 
     save()
 }
 
 /* ========== For List Functionality ============ */
+
+
 newTaskForm.addEventListener('submit', e => {
     e.preventDefault()
     const taskName = newTaskInput.value 
@@ -66,19 +66,17 @@ function clearTask(){
     saveAndRender()
 }
 
+/* ================ Generating/Creating lists ============= */
+
 function createList(name){
     return {id: 1, name: name, tasks: []}       
 }
 
 function createSuggestions(){
-    console.log(task_names)
     for (element in task_names){
-        console.log(task_names[element])
         const new_task = createTask(task_names[element])
-        console.log(new_task)
         suggestions_list.tasks.push(new_task)
     }       
-    console.log(suggestions_list)
     saveAndRender()
 }
 
@@ -86,6 +84,23 @@ function createTask(name){
     return {id: Date.now().toString(36) + Math.floor(Math.pow(10, 12) + Math.random() * 9*Math.pow(10, 12)).toString(36), name: name, complete: false}     
 }
 
+function generateList(suggestions){
+    newList = createList('To-Do')
+    checkedTasks = suggestions.tasks.filter(task => task.complete)
+    checkedTasks.forEach(element=>{
+        newTask = createTask(element.name)
+        newList.tasks.push(newTask)
+        console.log('pushed' + element.name)
+    })
+    return newList
+}
+
+function toggleAndGenerate(section, visiblePage){
+    console.log('made it')
+    list = generateList(suggestions_list)
+    render()
+    toggle_visibility(section, visiblePage)
+}
 
 /* ========== For Saving/Rendering ============ */
 
