@@ -46,10 +46,9 @@ newTaskForm.addEventListener('submit', e => {
 })
 
 tasksContainer.addEventListener('click', e => {
-    if(e.target.tagName.toLowerCase() === 'input'){
-        const selectedTask = list.tasks.find(task => task.id === e.target.id)
-        selectedTask.complete = e.target.checked
-        clearTask(selectedTask)
+    if(e.target.tagName.toLowerCase() === 'p'){
+        const selectedTask = list.tasks.find(task => task.id === e.target.parentNode.parentNode.id)
+        clearTask(e.target.parentNode.htmlFor)
     }
 })
 
@@ -60,9 +59,9 @@ suggestionsContainer.addEventListener('click', e => {
     }
 })
 
-function clearTask(){
+function clearTask(id){
     const selectedList = list //.find(list=> list.id === selectedListId)
-    selectedList.tasks = selectedList.tasks.filter(task => !task.complete)
+    selectedList.tasks = selectedList.tasks.filter(task => task.id != id)
     saveAndRender()
 }
 
@@ -90,7 +89,6 @@ function generateList(suggestions){
     checkedTasks.forEach(element=>{
         newTask = createTask(element.name)
         newList.tasks.push(newTask)
-        console.log('pushed' + element.name)
     })
     return newList
 }
@@ -152,6 +150,47 @@ function clearElement(element){
         element.removeChild(element.firstChild)
     }
 }
+
+/* =========== JQuery =========== 
+$.fn.extend({
+    editable: function() {
+        var that = this,
+            $edittextbox = $('<input type="text"></input>').css('min-width', that.width()),
+            submitChanges = function() {
+                that.html($edittextbox.val());
+                that.show();
+                that.trigger('editsubmit', [that.html()]);
+                $(document).off('click', submitChanges);
+                $edittextbox.detach();
+            },
+            tempVal;
+        $edittextbox.click(function(event) {
+            event.stopPropagation();
+        });
+
+        that.dblclick(function(e) {
+            tempVal = that.html();
+            $edittextbox.val(tempVal).insertBefore(that).off("keypress").on('keypress', function(e) {
+                if ($(this).val() !== '') {
+                    var code = (e.keyCode ? e.keyCode : e.which);
+                    if (code == 13) {
+                        submitChanges();
+                    }
+                }
+            });
+            that.hide();
+            $(document).one("click", submitChanges);
+        });
+        return that;
+    }
+});
+
+$('.custom-checkbox').editable().on('editsubmit', function (event, val) {
+    console.log('text changed to ' + val);
+    $("#new_fire_count").html(++newcounter);
+});
+
+/* =============== Run on Load =========== */
 
 toggle_visibility(visiblePage, 'section-1');
 render()

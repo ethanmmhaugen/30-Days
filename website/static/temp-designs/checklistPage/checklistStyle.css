@@ -194,11 +194,6 @@ button{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.task {
-    position: relative;
-    margin-bottom: 1.25em;
-}
-
 .btn.create{
   font-size: 1.5rem;
   font-weight: 900;
@@ -294,7 +289,23 @@ form > input {
 
 .task{
   position: relative;
-  margin-bottom: 1.25em;
+  margin-bottom: .75em;
+  margin-top: .75em;
+}
+
+.content-header{
+  position: relative;
+}
+
+.list-title::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: -.25em;
+  height: 1px;
+  background: gray;
+  opacity: .25;
 }
 
 .task::after{
@@ -304,8 +315,8 @@ form > input {
   left: 0;
   bottom: -.5em;
   height: 1px;
-  background: currentColor;
-  opacity: .1;
+  background: gray;
+  opacity: .25;
 }
 
 .custom-checkbox{
@@ -337,10 +348,12 @@ label > p:hover{
   color: var(--clr-primary);
 }
 
-[type="checkbox"]:not(:checked) + label{
+[type="checkbox"]:not(:checked) + .suggestion-label{
   opacity: 60%;
-  transform: scale(.9);
+}
 
+.task-label:hover{
+  transform: scale(1.1);
 }
 
 [type="checkbox"]:checked + label{
